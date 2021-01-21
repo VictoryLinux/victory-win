@@ -8,7 +8,7 @@
 #    \      /  |   ||  |_   |  |   |   |_|  ||  | |__| \   /        #
 #     \____/   |___||____|  |__|    \_____ / |__|       |_|         #
 #                                                                   #
-# Victory Linux Fedora Install script                               #
+# Victory Linux Windows Setup Toolbox                               #
 # https://github.com/VictoryLinux                                   #
 #####################################################################
 
@@ -51,7 +51,7 @@ If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 
 $Form                             = New-Object system.Windows.Forms.Form
 $Form.ClientSize                  = New-Object System.Drawing.Point(750,630)
-$Form.text                        = "VictoryWin 1.0"
+$Form.text                        = "VictoryWin Toolbox 1.0.1"
 $Form.TopMost                     = $false
 
 $PictureBox1                      = New-Object system.Windows.Forms.PictureBox
@@ -131,6 +131,14 @@ $UtilityLabel.height              = 20
 $UtilityLabel.location            = New-Object System.Drawing.Point(575,175)
 $UtilityLabel.Font                = New-Object System.Drawing.Font('Microsoft Sans Serif',14)
 $UtilityLabel.SelectionAlignment  = New-Object RichTextBox2.SelectionAlignment (HorizontalAlignment.Center)
+
+$PackageLabel                    = New-Object system.Windows.Forms.Label
+$PackageLabel.text               = "Package Management"
+$PackageLabel.width              = 200
+$PackageLabel.height             = 20
+$PackageLabel.location           = New-Object System.Drawing.Point(50,280)
+$PackageLabel.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',14)
+$PackageLabel.SelectionAlignment = New-Object RichTextBox2.SelectionAlignment (HorizontalAlignment.Center)
 
 $AutomateLabel                    = New-Object system.Windows.Forms.Label
 $AutomateLabel.text               = "Automate"
@@ -235,21 +243,21 @@ $Ichoco.location                 = New-Object System.Drawing.Point(50,300)
 $Ichoco.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',11)
 
 $Ipackages                       = New-Object system.Windows.Forms.Button
-$Ipackages.text                  = "Install All Packages"
+$Ipackages.text                  = "Install Packages"
 $Ipackages.width                 = 200
 $Ipackages.height                = 30
 $Ipackages.location              = New-Object System.Drawing.Point(50,335)
 $Ipackages.Font                  = New-Object System.Drawing.Font('Microsoft Sans Serif',11)
 
 $Igaming                         = New-Object system.Windows.Forms.Button
-$Igaming.text                    = "Install All Gaming Packages"
+$Igaming.text                    = "Install Gaming Packages"
 $Igaming.width                   = 200
 $Igaming.height                  = 30
 $Igaming.location                = New-Object System.Drawing.Point(50,370)
 $Igaming.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',11)
 
 $Ibrowsers                       = New-Object system.Windows.Forms.Button
-$Ibrowsers.text                  = "Install Web Browsers Only"
+$Ibrowsers.text                  = "Install Web Browsers"
 $Ibrowsers.width                 = 200
 $Ibrowsers.height                = 30
 $Ibrowsers.location              = New-Object System.Drawing.Point(50,405)
@@ -285,7 +293,7 @@ $ShutDown.height                 = 30
 $ShutDown.location               = New-Object System.Drawing.Point(500,580)
 $ShutDown.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',11)
 
-$Form.controls.AddRange(@($PictureBox1,$NameText,$Name,$WEditionText,$WEdition,$VersionText,$InstallLabel,$RemoveLabel,$UtilityLabel,$Version,$AutomateLabel,$CRestorePoint,$AStatus,$AWindows,$FTimeZone,$RenameComputer,$RSystemUpdate,$VLog,$IWUpdates,$FUpgrade,$Ichoco,$Ipackages,$Igaming,$essentialtweaks,$UUpgrade,$DUac,$Automate,$LogOut,$Restart,$ShutDown))
+$Form.controls.AddRange(@($PictureBox1,$NameText,$Name,$WEditionText,$WEdition,$VersionText,$InstallLabel,$RemoveLabel,$UtilityLabel,$Version,$PackageLabel,$AutomateLabel,$CRestorePoint,$AStatus,$AWindows,$FTimeZone,$RenameComputer,$RSystemUpdate,$VLog,$IWUpdates,$FUpgrade,$Ichoco,$Ibrowsers,$Ipackages,$Igaming,$essentialtweaks,$UUpgrade,$DUac,$Automate,$LogOut,$Restart,$ShutDown))
 $wshell.Popup("                    Welcome to VictoryLinux
 
                          Windows 10 Setup
@@ -420,14 +428,8 @@ $Ichoco.Add_Click({
     Write-Host "Complete - Installed Chocolatey." -ForegroundColor Green
 })
 
-$Ipackages.Add_Click({
+$Ibrowsers.Add_Click({
     clear
-    Write-Host "Installing VictoryLinux-Win Packages..."
-    start-sleep 6s
-    Write-Host "Installing Git..."
-    start-sleep 6s
-    choco install git -y
-    Write-Host "Complete - Installed Git." -ForegroundColor Green
     Write-Host "Installing Brave Browser..."
     start-sleep 6s
     choco install brave -y
@@ -440,6 +442,16 @@ $Ipackages.Add_Click({
     start-sleep 6s
     choco install chromium -y
     Write-Host "Complete - Installed Chromium Browser." -ForegroundColor Green
+})
+
+$Ipackages.Add_Click({
+    clear
+    Write-Host "Installing VictoryLinux-Win Packages..."
+    start-sleep 6s
+    Write-Host "Installing Git..."
+    start-sleep 6s
+    choco install git -y
+    Write-Host "Complete - Installed Git." -ForegroundColor Green
     Write-Host "Installing Irfanview (Image Viewer)..."
     start-sleep 6s
     choco install irfanview -y
