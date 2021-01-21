@@ -1,4 +1,4 @@
-# This script gives setup options used by WCS
+# This script gives setup options for Win 10
 # Author - VictoryLinux
 # Date - 12.15.2020
 
@@ -39,24 +39,24 @@ If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
     }
 }
 
-$Form                            = New-Object system.Windows.Forms.Form
-$Form.ClientSize                 = New-Object System.Drawing.Point(750,630)
-$Form.text                       = "VictoryWin 1.0"
-$Form.TopMost                    = $false
+$Form                             = New-Object system.Windows.Forms.Form
+$Form.ClientSize                  = New-Object System.Drawing.Point(750,630)
+$Form.text                        = "VictoryWin 1.0"
+$Form.TopMost                     = $false
 
-$PictureBox1                     = New-Object system.Windows.Forms.PictureBox
-$PictureBox1.width               = 575
-$PictureBox1.height              = 80
-$PictureBox1.location            = New-Object System.Drawing.Point(80,14)
-$PictureBox1.imageLocation       = "https://github.com/VictoryLinux/victory-ame/blob/master/victorylinux.png?raw=true"
-$PictureBox1.SizeMode            = [System.Windows.Forms.PictureBoxSizeMode]::zoom
+$PictureBox1                      = New-Object system.Windows.Forms.PictureBox
+$PictureBox1.width                = 575
+$PictureBox1.height               = 80
+$PictureBox1.location             = New-Object System.Drawing.Point(80,14)
+$PictureBox1.imageLocation        = "https://github.com/VictoryLinux/victory-ame/blob/master/victorylinux.png?raw=true"
+$PictureBox1.SizeMode             = [System.Windows.Forms.PictureBoxSizeMode]::zoom
 
 $NameText                         = New-Object system.Windows.Forms.Label
 $NameText.text                    = "PC's Name"
 $NameText.width                   = 150
 $NameText.height                  = 30
-$NameText.location                = New-Object System.Drawing.Point(145,100)
-$NameText.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',11)
+$NameText.location                = New-Object System.Drawing.Point(100,100)
+$NameText.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',14)
 $NameText.SelectionAlignment      = New-Object RichTextBox2.SelectionAlignment (HorizontalAlignment.Center)
 
 $Name                             = New-Object system.Windows.Forms.RichTextBox
@@ -64,14 +64,14 @@ $Name.text                        = $Env:Computername
 $Name.width                       = 200
 $Name.height                      = 30
 $Name.location                    = New-Object System.Drawing.Point(50,135)
-$Name.Font                        = New-Object System.Drawing.Font('Microsoft Sans Serif',11)
+$Name.Font                        = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $WEditionText                     = New-Object system.Windows.Forms.Label
 $WEditionText.text                = "Windows Edition"
 $WEditionText.width               = 150
 $WEditionText.height              = 30
-$WEditionText.location            = New-Object System.Drawing.Point(325,100)
-$WEditionText.Font                = New-Object System.Drawing.Font('Microsoft Sans Serif',11)
+$WEditionText.location            = New-Object System.Drawing.Point(300,100)
+$WEditionText.Font                = New-Object System.Drawing.Font('Microsoft Sans Serif',14)
 $WEditionText.SelectionAlignment  = New-Object RichTextBox2.SelectionAlignment (HorizontalAlignment.Center)
 
 $WEdition                         = New-Object system.Windows.Forms.RichTextBox
@@ -79,15 +79,15 @@ $WEdition.text                    = (Get-WmiObject -class Win32_OperatingSystem)
 $WEdition.width                   = 200
 $WEdition.height                  = 30
 $WEdition.location                = New-Object System.Drawing.Point(275,135)
-$WEdition.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',11)
+$WEdition.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 $WEdition.SelectionAlignment      = New-Object RichTextBox2.SelectionAlignment (HorizontalAlignment.Center)
 
 $VersionText                      = New-Object system.Windows.Forms.Label
 $VersionText.text                 = "Feature Version"
 $VersionText.width                = 200
 $VersionText.height               = 30
-$VersionText.location             = New-Object System.Drawing.Point(530,100)
-$VersionText.Font                 = New-Object System.Drawing.Font('Microsoft Sans Serif',11)
+$VersionText.location             = New-Object System.Drawing.Point(510,100)
+$VersionText.Font                 = New-Object System.Drawing.Font('Microsoft Sans Serif',14)
 $VersionText.SelectionAlignment   = New-Object RichTextBox2.SelectionAlignment (HorizontalAlignment.Center)
 
 $Version                          = New-Object system.Windows.Forms.RichTextBox
@@ -95,23 +95,23 @@ $Version.text                     = (Get-ItemProperty -Path "HKLM:\SOFTWARE\Micr
 $Version.width                    = 200
 $Version.height                   = 30
 $Version.location                 = New-Object System.Drawing.Point(500,135)
-$Version.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',11)
+$Version.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 $Version.SelectionAlignment       = New-Object RichTextBox2.SelectionAlignment (HorizontalAlignment.Center)
 
 $InstallLabel                     = New-Object system.Windows.Forms.Label
 $InstallLabel.text                = "Install"
 $InstallLabel.width               = 150
 $InstallLabel.height              = 20
-$InstallLabel.location            = New-Object System.Drawing.Point(130,175)
-$InstallLabel.Font                = New-Object System.Drawing.Font('Microsoft Sans Serif',11)
+$InstallLabel.location            = New-Object System.Drawing.Point(125,175)
+$InstallLabel.Font                = New-Object System.Drawing.Font('Microsoft Sans Serif',14)
 $InstallLabel.SelectionAlignment  = New-Object RichTextBox2.SelectionAlignment (HorizontalAlignment.Center)
 
 $RemoveLabel                      = New-Object system.Windows.Forms.Label
 $RemoveLabel.text                 = "Remove"
 $RemoveLabel.width                = 150
 $RemoveLabel.height               = 20
-$RemoveLabel.location             = New-Object System.Drawing.Point(350,175)
-$RemoveLabel.Font                 = New-Object System.Drawing.Font('Microsoft Sans Serif',11)
+$RemoveLabel.location             = New-Object System.Drawing.Point(340,175)
+$RemoveLabel.Font                 = New-Object System.Drawing.Font('Microsoft Sans Serif',14)
 $RemoveLabel.SelectionAlignment   = New-Object RichTextBox2.SelectionAlignment (HorizontalAlignment.Center) 
 
 $UtilityLabel                     = New-Object system.Windows.Forms.Label
@@ -119,15 +119,15 @@ $UtilityLabel.text                = "Utility"
 $UtilityLabel.width               = 150
 $UtilityLabel.height              = 20
 $UtilityLabel.location            = New-Object System.Drawing.Point(575,175)
-$UtilityLabel.Font                = New-Object System.Drawing.Font('Microsoft Sans Serif',11)
+$UtilityLabel.Font                = New-Object System.Drawing.Font('Microsoft Sans Serif',14)
 $UtilityLabel.SelectionAlignment  = New-Object RichTextBox2.SelectionAlignment (HorizontalAlignment.Center)
 
 $AutomateLabel                    = New-Object system.Windows.Forms.Label
 $AutomateLabel.text               = "Automate"
 $AutomateLabel.width              = 150
 $AutomateLabel.height             = 20
-$AutomateLabel.location           = New-Object System.Drawing.Point(350,510)
-$AutomateLabel.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',11)
+$AutomateLabel.location           = New-Object System.Drawing.Point(325,510)
+$AutomateLabel.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',14)
 $AutomateLabel.SelectionAlignment = New-Object RichTextBox2.SelectionAlignment (HorizontalAlignment.Center)
 
 # Utility
@@ -163,7 +163,7 @@ $essentialtweaks                 = New-Object system.Windows.Forms.Button
 $essentialtweaks.text            = "Essential Tweaks"
 $essentialtweaks.width           = 200
 $essentialtweaks.height          = 30
-$essentialtweaks.location        = New-Object System.Drawing.Point(500,335)
+$essentialtweaks.location        = New-Object System.Drawing.Point(500,340)
 $essentialtweaks.Font            = New-Object System.Drawing.Font('Microsoft Sans Serif',11)
 
 $FTimeZone                       = New-Object system.Windows.Forms.Button
@@ -194,6 +194,13 @@ $UUpgrade.width                  = 200
 $UUpgrade.height                 = 30
 $UUpgrade.location               = New-Object System.Drawing.Point(275,195)
 $UUpgrade.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',11)
+
+$Debloat                         = New-Object system.Windows.Forms.Button
+$DeBloat.text                    = "Debloat Windows 10"
+$DeBloat.width                   = 200
+$DeBloat.height                  = 30
+$DeBloat.location                = New-Object System.Drawing.Point(275,230)
+$DeBloat.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',11)
 
 # Install
 $FUpgrade                        = New-Object system.Windows.Forms.Button
@@ -262,13 +269,13 @@ $ShutDown.location               = New-Object System.Drawing.Point(500,580)
 $ShutDown.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',11)
 
 $Form.controls.AddRange(@($PictureBox1,$NameText,$Name,$WEditionText,$WEdition,$VersionText,$InstallLabel,$RemoveLabel,$UtilityLabel,$Version,$AutomateLabel,$CRestorePoint,$AStatus,$AWindows,$FTimeZone,$RenameComputer,$RSystemUpdate,$VLog,$IWUpdates,$FUpgrade,$Ichoco,$Ipackages,$Igaming,$essentialtweaks,$UUpgrade,$DUac,$Automate,$LogOut,$Restart,$ShutDown))
-$wshell.Popup("                   Welcome to VictoryLinux
+$wshell.Popup("                    Welcome to VictoryLinux
 
-                          Windows 10 Setup
+                         Windows 10 Setup
 
 
 
-           Select the Option that fits your needs.",0,"VictoryLinux-Win",0x0)
+          Select the Option that fits your needs.",0,"VictoryLinux-Win",0x0)
 
 #########################
 #                       #
@@ -310,6 +317,189 @@ $DUac.Add_Click({
     Write-Host "Complete - Windows UAC has been Disabled" -ForegroundColor Green
     $wshell.Popup("Complete - Windows UAC has been Disabled",0,"Complete",0x0)
 })
+
+# Fix the Time Zone by setting it to Central time zone.
+$FTimeZone.Add_Click({
+    clear
+    Write-Host "Setting Time Zone... "
+    Set-TimeZone -Name "Central Standard Time"
+    $DateTime = Get-Date
+    $DateTime
+    $DateTime.ToUniversalTime()
+    Write-Host "Complete - Time Zone set to Central Time" -ForegroundColor Green
+    $wshell.Popup("Complete - Time Zone set to Central Time",0,"Complete",0x0)
+})
+
+# Rename your PC.
+$RenameComputer.Add_Click({
+    clear
+    $wshell.Popup("Please respond to the prompt in the Powershell Window to Rename this PC.",0,"Notice",0x0)
+    Write-Host "Renaming Computer... "
+    Rename-Computer
+    $wshell.Popup("Complete - Please Reboot.",0,"Complete",0x0)
+})
+
+$VLog.Add_Click({
+    Write-Host "View Victory-Win Setup Log... "
+    notepad C:\victory-win\Log.txt
+    Write-Host "Complete - Victory-Win Log has launched." -ForegroundColor Green
+})
+
+    $DesktopPath = [Environment]::GetFolderPath("Desktop")
+
+#########################
+#                       #
+#        Install        #
+#                       #
+#########################
+
+# Install Windows 10 Upgrade Assistant & install latest feature Update.
+$FUpgrade.Add_Click({
+    clear
+    $wshell.Popup("The Feature Upgrade has started
+    DO NOT RESTART THIS PC UNTIL PROMPTED TO DO SO
+    Once Finished, restart then Run Clean-up Feature Update Option to remove leftover files",0,"Complete",0x0)
+    Write-Host "Starting Windows Feature Upgrade... "
+    $dir = 'C:\WcsSetupLite\_Windows_FU\packages'
+    mkdir $dir
+    $webClient = New-Object System.Net.WebClient
+    $url = 'https://go.microsoft.com/fwlink/?LinkID=799445'
+    $file = "$($dir)\Win10Upgrade.exe"
+    $webClient.DownloadFile($url,$file)
+    Start-Process -FilePath $file -ArgumentList '<#/quietinstall#> /skipeula /auto upgrade /copylogs $dir' 
+    Write-Host "The Feature Upgrade has started... " -BackgroundColor Red
+    Write-Host "DO NOT RESTART THIS PC UNTIL PROMPTED TO DO SO... " -BackgroundColor Red
+    Write-Host "Once Finished, restart then Run Clean-up Feature Update Option to remove leftover files... " -BackgroundColor Red
+#    $wshell.Popup("Complete - Activ Driver is installed",0,"Complete",0x0)
+})
+
+$IWUpdates.Add_Click({
+    clear
+    $wshell.Popup("This Action Requires Manual Intervention
+You will have to respond to several prompts in the Powershell Window.",0,"Notice",0x0)
+    Write-Host "Installing Windows Updates... "
+#    Start-Sleep -s 25
+    Install-Module PSWindowsUpdate
+    Start-Sleep -s 15
+    Import-Module PSWindowsUpdate
+    Start-Sleep -s 15
+    Get-WindowsUpdate
+    Start-Sleep -s 25
+    Install-WindowsUpdate
+    Start-Sleep -s 25
+    Write-Host "Complete - Windows Updates are finished running." -ForegroundColor Green
+    $wshell.Popup("Complete - Windows Updates are finished running",0,"Complete",0x0)
+})
+
+$Ichoco.Add_Click({
+    clear
+    Write-Host "Installing Chocolatey..."
+    Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+    choco install chocolatey-core.extension -y
+    Write-Host "Complete - Installed Chocolatey." -ForegroundColor Green
+})
+
+$Ipackages.Add_Click({
+    clear
+    Write-Host "Installing VictoryLinux-Win Packages..."
+    start-sleep 6s
+    Write-Host "Installing Git..."
+    start-sleep 6s
+    choco install git -y
+    Write-Host "Complete - Installed Git." -ForegroundColor Green
+    Write-Host "Installing Brave Browser..."
+    start-sleep 6s
+    choco install brave -y
+    Write-Host "Complete - Installed Brave Browser." -ForegroundColor Green
+    Write-Host "Installing Firefox Browser..."
+    start-sleep 6s
+    choco install firefox -y
+    Write-Host "Complete - Installed Firefox Browser." -ForegroundColor Green
+    Write-Host "Installing Chromium Browser..."
+    start-sleep 6s
+    choco install chromium -y
+    Write-Host "Complete - Installed Chromium Browser." -ForegroundColor Green
+    Write-Host "Installing Irfanview (Image Viewer)..."
+    start-sleep 6s
+    choco install irfanview -y
+    Write-Host "Complete - Installed Irfanview (Image Viewer)." -ForegroundColor Green
+    Write-Host "Installing Adobe Reader DC..."
+    start-sleep 6s
+    choco install adobereader -y
+    Write-Host "Complete - Installed Adobe Reader DC." -ForegroundColor Green
+    Write-Host "Installing Sublime Text 3..."
+    start-sleep 6s
+    choco install sublimetext3 -y
+    Write-Host "Complete - Installed Sublime Text 3." -ForegroundColor Green
+    Write-Host "Installing VLC Media Player..."
+    start-sleep 6s
+    choco install vlc -y
+    Write-Host "Complete - Installed VLC Media Player." -ForegroundColor Green
+    Write-Host "Installing 7-Zip..."
+    start-sleep 6s
+    choco install 7zip -y
+    Write-Host "Complete - Installed 7-Zip." -ForegroundColor Green
+    Write-Host "Installing WinRAR..."
+    start-sleep 6s
+    choco install winrar -y
+    Write-Host "Complete - Installed WinRAR." -ForegroundColor Green
+    Write-Host "Installing New Windows Terminal..."
+    start-sleep 6s
+    choco install microsoft-windows-terminal -y
+    Write-Host "Complete - Installed New Windows Terminal." -ForegroundColor Green
+    Write-Host "Installing Simplenote..."
+    start-sleep 6s
+    choco install simplenote -y
+    Write-Host "Complete - Installed Simplenote." -ForegroundColor Green
+    Write-Host "Installing Remote Desktop Packages..."
+    start-sleep 6s
+    choco install vnc-viewer vnc-connect teamviewer -y
+    Write-Host "Complete - Installed Remote Desktop Packages." -ForegroundColor Green
+    Write-Host "Installing Bitwarden..."
+    start-sleep 6s
+    choco install bitwarden -y
+    Write-Host "Complete - Installed Bitwarden." -ForegroundColor Green
+    Write-Host "Installing Onlyoffice..."
+    start-sleep 6s
+    choco install onlyoffice -y
+    Write-Host "Complete - Installed Onlyoffice." -ForegroundColor Green
+    Write-Host "Installing Partition Wizard..."
+    start-sleep 6s
+    choco install partitionwizard -y
+    Write-Host "Complete - Installed Partition Wizard." -ForegroundColor Green
+    Write-Host "Installing Virtualbox..."
+    start-sleep 6s
+    choco install virtualbox -y
+    Write-Host "Complete - Installed Virtualbox." -ForegroundColor Green
+    Write-Host "Installing Virtualbox..."
+    start-sleep 6s
+    choco install virtualbox -y
+    Write-Host "Complete - Installed Virtualbox." -ForegroundColor Green
+})
+
+$Igaming.Add_Click({
+    clear
+    Write-Host "Installing VictoryLinux-Win Gaming Packages..."
+    start-sleep 6s
+    Write-Host "Installing Discord..."
+    start-sleep 6s
+    choco install discord -y
+    Write-Host "Complete - Installed Discord." -ForegroundColor Green
+    Write-Host "Installing tukui..."
+    start-sleep 6s
+    choco install discord -y
+    Write-Host "Complete - Installed tukui." -ForegroundColor Green
+    Write-Host "Installing Razer-Synapse-2..."
+    start-sleep 6s
+    choco install razer-synapse-2 -y
+    Write-Host "Complete - Installed Razer-Synapse-2." -ForegroundColor Green
+})
+
+#########################
+#                       #
+#        Remove         #
+#                       #
+#########################
 
 $essentialtweaks.Add_Click({ 
     Write-Host "Creating Restore Point incase something bad happens..."
@@ -611,208 +801,6 @@ $Paint3Dstuff = @(
 
 })
 
-# Fix the Time Zone by setting it to Central time zone.
-$FTimeZone.Add_Click({
-    clear
-    Write-Host "Setting Time Zone... "
-    Set-TimeZone -Name "Central Standard Time"
-    $DateTime = Get-Date
-    $DateTime
-    $DateTime.ToUniversalTime()
-    Write-Host "Complete - Time Zone set to Central Time" -ForegroundColor Green
-    $wshell.Popup("Complete - Time Zone set to Central Time",0,"Complete",0x0)
-})
-
-# Rename your PC.
-$RenameComputer.Add_Click({
-    clear
-    $wshell.Popup("Please respond to the prompt in the Powershell Window to Rename this PC.",0,"Notice",0x0)
-    Write-Host "Renaming Computer... "
-    Rename-Computer
-    $wshell.Popup("Complete - Please Reboot.",0,"Complete",0x0)
-})
-
-$VLog.Add_Click({
-    Write-Host "View WcsSetup Log... "
-    notepad C:\WcsSetup\Log.txt
-    Write-Host "Complete - WcsSetup Log has launched." -ForegroundColor Green
-})
-
-    $DesktopPath = [Environment]::GetFolderPath("Desktop")
-
-#########################
-#                       #
-#        Install        #
-#                       #
-#########################
-
-# Install Windows 10 Upgrade Assistant & install latest feature Update.
-$FUpgrade.Add_Click({
-    clear
-    $wshell.Popup("The Feature Upgrade has started
-    DO NOT RESTART THIS PC UNTIL PROMPTED TO DO SO
-    Once Finished, restart then Run Clean-up Feature Update Option to remove leftover files",0,"Complete",0x0)
-    Write-Host "Starting Windows Feature Upgrade... "
-    $dir = 'C:\WcsSetupLite\_Windows_FU\packages'
-    mkdir $dir
-    $webClient = New-Object System.Net.WebClient
-    $url = 'https://go.microsoft.com/fwlink/?LinkID=799445'
-    $file = "$($dir)\Win10Upgrade.exe"
-    $webClient.DownloadFile($url,$file)
-    Start-Process -FilePath $file -ArgumentList '<#/quietinstall#> /skipeula /auto upgrade /copylogs $dir' 
-    Write-Host "The Feature Upgrade has started... " -BackgroundColor Red
-    Write-Host "DO NOT RESTART THIS PC UNTIL PROMPTED TO DO SO... " -BackgroundColor Red
-    Write-Host "Once Finished, restart then Run Clean-up Feature Update Option to remove leftover files... " -BackgroundColor Red
-#    $wshell.Popup("Complete - Activ Driver is installed",0,"Complete",0x0)
-})
-
-$IWUpdates.Add_Click({
-    clear
-    $wshell.Popup("This Action Requires Manual Intervention
-You will have to respond to several prompts in the Powershell Window.",0,"Notice",0x0)
-    Write-Host "Installing Windows Updates... "
-#    Start-Sleep -s 25
-    Install-Module PSWindowsUpdate
-    Start-Sleep -s 15
-    Import-Module PSWindowsUpdate
-    Start-Sleep -s 15
-    Get-WindowsUpdate
-    Start-Sleep -s 25
-    Install-WindowsUpdate
-    Start-Sleep -s 25
-    Write-Host "Complete - Windows Updates are finished running." -ForegroundColor Green
-    $wshell.Popup("Complete - Windows Updates are finished running",0,"Complete",0x0)
-})
-
-$Ichoco.Add_Click({
-    clear
-    Write-Host "Installing Chocolatey..."
-    Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-    choco install chocolatey-core.extension -y
-    Write-Host "Complete - Installed Chocolatey." -ForegroundColor Green
-})
-
-$Ipackages.Add_Click({
-    clear
-    $wshell.Popup("This will take several minutes.
-        Packages to be installed:
-
-        Git
-        Brave Browser
-        Firefox Browser
-        Chromium Browser
-        Image Viewer
-        Adobe Reader DC
-        Sublime Text 3
-        VLC Media Player
-        7zip
-        WinRAR
-        Windows Terminal
-        Simplenote
-        Remote Desktop Packages
-        Bitwarden
-        Onlyoffice
-        Partition Wizard
-        VirtualBox",0,"Notice",0x0)
-    Write-Host "Installing VictoryLinux-Win Packages..."
-    start-sleep 6s
-    Write-Host "Installing Git..."
-    start-sleep 6s
-    choco install git -y
-    Write-Host "Complete - Installed Git." -ForegroundColor Green
-    Write-Host "Installing Brave Browser..."
-    start-sleep 6s
-    choco install brave -y
-    Write-Host "Complete - Installed Brave Browser." -ForegroundColor Green
-    Write-Host "Installing Firefox Browser..."
-    start-sleep 6s
-    choco install firefox -y
-    Write-Host "Complete - Installed Firefox Browser." -ForegroundColor Green
-    Write-Host "Installing Chromium Browser..."
-    start-sleep 6s
-    choco install chromium -y
-    Write-Host "Complete - Installed Chromium Browser." -ForegroundColor Green
-    Write-Host "Installing Irfanview (Image Viewer)..."
-    start-sleep 6s
-    choco install irfanview -y
-    Write-Host "Complete - Installed Irfanview (Image Viewer)." -ForegroundColor Green
-    Write-Host "Installing Adobe Reader DC..."
-    start-sleep 6s
-    choco install adobereader -y
-    Write-Host "Complete - Installed Adobe Reader DC." -ForegroundColor Green
-    Write-Host "Installing Sublime Text 3..."
-    start-sleep 6s
-    choco install sublimetext3 -y
-    Write-Host "Complete - Installed Sublime Text 3." -ForegroundColor Green
-    Write-Host "Installing VLC Media Player..."
-    start-sleep 6s
-    choco install vlc -y
-    Write-Host "Complete - Installed VLC Media Player." -ForegroundColor Green
-    Write-Host "Installing 7-Zip..."
-    start-sleep 6s
-    choco install 7zip -y
-    Write-Host "Complete - Installed 7-Zip." -ForegroundColor Green
-    Write-Host "Installing WinRAR..."
-    start-sleep 6s
-    choco install winrar -y
-    Write-Host "Complete - Installed WinRAR." -ForegroundColor Green
-    Write-Host "Installing New Windows Terminal..."
-    start-sleep 6s
-    choco install microsoft-windows-terminal -y
-    Write-Host "Complete - Installed New Windows Terminal." -ForegroundColor Green
-    Write-Host "Installing Simplenote..."
-    start-sleep 6s
-    choco install simplenote -y
-    Write-Host "Complete - Installed Simplenote." -ForegroundColor Green
-    Write-Host "Installing Remote Desktop Packages..."
-    start-sleep 6s
-    choco install vnc-viewer vnc-connect teamviewer -y
-    Write-Host "Complete - Installed Remote Desktop Packages." -ForegroundColor Green
-    Write-Host "Installing Bitwarden..."
-    start-sleep 6s
-    choco install bitwarden -y
-    Write-Host "Complete - Installed Bitwarden." -ForegroundColor Green
-    Write-Host "Installing Onlyoffice..."
-    start-sleep 6s
-    choco install onlyoffice -y
-    Write-Host "Complete - Installed Onlyoffice." -ForegroundColor Green
-    Write-Host "Installing Partition Wizard..."
-    start-sleep 6s
-    choco install partitionwizard -y
-    Write-Host "Complete - Installed Partition Wizard." -ForegroundColor Green
-    Write-Host "Installing Virtualbox..."
-    start-sleep 6s
-    choco install virtualbox -y
-    Write-Host "Complete - Installed Virtualbox." -ForegroundColor Green
-    taskkill /IM explorer.exe /F
-    explorer.exe
-})
-
-$Igaming.Add_Click({
-    clear
-    Write-Host "Installing VictoryLinux-Win Gaming Packages..."
-    start-sleep 6s
-    Write-Host "Installing Discord..."
-    start-sleep 6s
-    choco install discord -y
-    Write-Host "Complete - Installed Discord." -ForegroundColor Green
-    Write-Host "Installing Tukui..."
-    start-sleep 6s
-    choco install tukui -y
-    Write-Host "Complete - Installed Tukui." -ForegroundColor Green
-    Write-Host "Installing Razer-Synapse-2..."
-    start-sleep 6s
-    choco install razer-synapse-2 -y
-    Write-Host "Complete - Installed Razer-Synapse-2." -ForegroundColor Green
-    
-})
-
-#########################
-#                       #
-#        Remove         #
-#                       #
-#########################
-
 $windowssearch.Add_Click({ 
     Write-Host "Disabling Bing Search in Start Menu..."
     Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" -Name "BingSearchEnabled" -Type DWord -Value 0
@@ -860,11 +848,30 @@ $Automate.Add_Click({
     Start-Sleep -s 50
     Write-Host "Complete - Restore Point Created" -ForegroundColor Green
     start-sleep -s 15
+
+    # Essential Tweaks
     Write-Host "Running O&O Shutup with Recommended Settings"
     Import-Module BitsTransfer      choco install shutup10 -y
     Start-BitsTransfer -Source "https://raw.githubusercontent.com/ChrisTitusTech/win10script/master/ooshutup10.cfg" -Destination ooshutup10.cfg     OOSU10 ooshutup10.cfg /quiet
     Start-BitsTransfer -Source "https://dl5.oo-software.com/files/ooshutup10/OOSU10.exe" -Destination OOSU10.exe    
     ./OOSU10.exe ooshutup10.cfg /quiet
+
+    Write-Host "Disabling UAC... "
+    Set-ItemProperty -Path REGISTRY::HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System -Name ConsentPromptBehaviorAdmin -Value 0
+    Write-Host "Complete - Windows UAC has been Disabled" -ForegroundColor Green
+    
+    # Fix the Time Zone by setting it to Central time zone.
+    Write-Host "Setting Time Zone... "
+    Set-TimeZone -Name "Central Standard Time"
+    $DateTime = Get-Date
+    $DateTime
+    $DateTime.ToUniversalTime()
+    Write-Host "Complete - Time Zone set to Central Time" -ForegroundColor Green
+    
+    # Rename your PC.
+    $wshell.Popup("Please respond to the prompt in the Powershell Window to Rename this PC.",0,"Notice",0x0)
+    Write-Host "Renaming Computer... "
+    Rename-Computer
 
     Write-Host "Disabling Telemetry..."
     Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection" -Name "AllowTelemetry" -Type DWord -Value 0
@@ -1146,9 +1153,30 @@ $Paint3Dstuff = @(
         Set-Item $Paint3D $rmPaint3D
     }
     }
-    
+    start-sleep -s 15
+    Write-Host "Disabling Bing Search in Start Menu..."
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" -Name "BingSearchEnabled" -Type DWord -Value 0
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" -Name "CortanaConsent" -Type DWord -Value 0
+    If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search")) {
+        New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search" -Force | Out-Null
+    }
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search" -Name "DisableWebSearch" -Type DWord -Value 1
+    Write-Host "Stopping and disabling Windows Search indexing service..."
+    Stop-Service "WSearch" -WarningAction SilentlyContinue
+    Set-Service "WSearch" -StartupType Disabled
+    Write-Host "Hiding Taskbar Search icon / box..."
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" -Name "SearchboxTaskbarMode" -Type DWord -Value 0
     taskkill /IM explorer.exe /F
     explorer.exe
+    start-sleep -s 15
+
+    # Installing Packages
+    clear
+    Write-Host "Installing Chocolatey..."
+    Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+    choco install chocolatey-core.extension -y
+    Write-Host "Complete - Installed Chocolatey." -ForegroundColor Green
+
     Write-Host "Installing VictoryLinux-Win Packages..."
     start-sleep 6s
     Write-Host "Installing Git..."
@@ -1219,22 +1247,6 @@ $Paint3Dstuff = @(
     start-sleep 6s
     choco install virtualbox -y
     Write-Host "Complete - Installed Virtualbox." -ForegroundColor Green
-    taskkill /IM explorer.exe /F
-    explorer.exe
-    Write-Host "Installing VictoryLinux-Win Gaming Packages..."
-    start-sleep 6s
-    Write-Host "Installing Discord..."
-    start-sleep 6s
-    choco install discord -y
-    Write-Host "Complete - Installed Discord." -ForegroundColor Green
-    Write-Host "Installing Tukui..."
-    start-sleep 6s
-    choco install tukui -y
-    Write-Host "Complete - Installed Tukui." -ForegroundColor Green
-    Write-Host "Installing Razer-Synapse-2..."
-    start-sleep 6s
-    choco install razer-synapse-2 -y
-    Write-Host "Complete - Installed Razer-Synapse-2." -ForegroundColor Green
     
     $wshell.Popup("Automate Script Complete",0,"Complete",0x0)
     
