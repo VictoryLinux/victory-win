@@ -1,6 +1,16 @@
 # This script gives setup options for Win 10
 # Author - VictoryLinux
-# Date - 12.15.2020
+
+#####################################################################
+#  ____    ____  __                                                 #
+#  \   \  /   / |__| ____ ________    ____    _______ ___  ___      #
+#   \   \/   /  ___ |   _|\__   __\ /   _  \ |  __   |\  \/  /      #
+#    \      /  |   ||  |_   |  |   |   |_|  ||  | |__| \   /        #
+#     \____/   |___||____|  |__|    \_____ / |__|       |_|         #
+#                                                                   #
+# Victory Linux Fedora Install script                               #
+# https://github.com/VictoryLinux                                   #
+#####################################################################
 
 If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]"Administrator")) {
         
@@ -221,22 +231,29 @@ $Ichoco                          = New-Object system.Windows.Forms.Button
 $Ichoco.text                     = "Install Chocolatey PM"
 $Ichoco.width                    = 200
 $Ichoco.height                   = 30
-$Ichoco.location                 = New-Object System.Drawing.Point(50,265)
+$Ichoco.location                 = New-Object System.Drawing.Point(50,300)
 $Ichoco.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',11)
 
 $Ipackages                       = New-Object system.Windows.Forms.Button
-$Ipackages.text                  = "Install Packages"
+$Ipackages.text                  = "Install All Packages"
 $Ipackages.width                 = 200
 $Ipackages.height                = 30
-$Ipackages.location              = New-Object System.Drawing.Point(50,300)
+$Ipackages.location              = New-Object System.Drawing.Point(50,335)
 $Ipackages.Font                  = New-Object System.Drawing.Font('Microsoft Sans Serif',11)
 
 $Igaming                         = New-Object system.Windows.Forms.Button
-$Igaming.text                    = "Install Gaming Packages"
+$Igaming.text                    = "Install All Gaming Packages"
 $Igaming.width                   = 200
 $Igaming.height                  = 30
-$Igaming.location                = New-Object System.Drawing.Point(50,335)
+$Igaming.location                = New-Object System.Drawing.Point(50,370)
 $Igaming.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',11)
+
+$Ibrowsers                       = New-Object system.Windows.Forms.Button
+$Ibrowsers.text                  = "Install Web Browsers Only"
+$Ibrowsers.width                 = 200
+$Ibrowsers.height                = 30
+$Ibrowsers.location              = New-Object System.Drawing.Point(50,405)
+$Ibrowsers.Font                  = New-Object System.Drawing.Font('Microsoft Sans Serif',11)
 
 # Automate
 $Automate                        = New-Object system.Windows.Forms.Button
@@ -375,6 +392,10 @@ $FUpgrade.Add_Click({
 
 $IWUpdates.Add_Click({
     clear
+    Write-Host "Updating Windows Packages... "
+    $wshell.Popup("Make sure you have installed Chocolatey PM before running this
+        This update process will not work without it.",0,"Notice",0x0)
+    choco upgrade all -y
     $wshell.Popup("This Action Requires Manual Intervention
 You will have to respond to several prompts in the Powershell Window.",0,"Notice",0x0)
     Write-Host "Installing Windows Updates... "
