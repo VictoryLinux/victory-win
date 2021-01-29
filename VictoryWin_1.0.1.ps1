@@ -508,6 +508,10 @@ $Ipackages.Add_Click({
     start-sleep 6s
     choco install virtualbox -y
     Write-Host "Complete - Installed Virtualbox." -ForegroundColor Green
+    Write-Host "Installing Chocolatey GUI..."
+    start-sleep 6s
+    choco install chocolateygui -y
+    Write-Host "Complete - Installed Chocolatey GUI." -ForegroundColor Green
 })
 
 $Igaming.Add_Click({
